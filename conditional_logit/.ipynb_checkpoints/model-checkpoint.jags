@@ -1,0 +1,15 @@
+model
+{
+    for (np in 1:nPeople) {
+        for (ch in 1:nChoices) {
+            utility[np, ch] <- beta[1] * dark[np, ch] + beta[2] * 
+                soft[np, ch] + beta[3] * nuts[np, ch]
+            eutility[np, ch] <- exp(utility[np, ch])
+            prob[np, ch] <- eutility/sum(eutility[np, ])
+        }
+        y[np, ] ~ dmulti(prob[np, ], 1)
+    }
+    beta[1] ~ dnorm(0.00000E+00, 0.001)
+    beta[2] ~ dnorm(0.00000E+00, 0.001)
+    beta[3] ~ dnorm(0.00000E+00, 0.001)
+}

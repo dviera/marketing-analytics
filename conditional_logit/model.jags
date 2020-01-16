@@ -1,0 +1,14 @@
+model
+{
+    for (np in 1:nPeople) {
+        for (ch in 1:nChoices) {
+            log(utility[np, ch]) <- beta[1] * dark[np, ch] + 
+                beta[2] * soft[np, ch] + beta[3] * nuts[np, ch]
+            prob[np, ch] <- utility[np, ch]/sum(utility[np, ])
+        }
+        y[np, ] ~ dmulti(prob[np, ], 1)
+    }
+    beta[1] ~ dnorm(0.00000E+00, 0.01)
+    beta[2] ~ dnorm(0.00000E+00, 0.01)
+    beta[3] ~ dnorm(0.00000E+00, 0.01)
+}
