@@ -10,5 +10,5 @@
     - Example without marketing data however the principles are the same
     - Kaplan_Meier.xlsx: calculation of the Kaplan Meier survival table and curve
     - KM_log_rank_test.ipynb: using survival package to calculate the survival curve by gender and test if there is a statistically significant difference between survival times between gender
-3) [Neural network for Discrete Choice Model] (https://github.com/dviera/marketing-analytics/blob/master/nn_discrete_choice_torch.ipynb). 
+3) Neural network for Discrete Choice Model [https://github.com/dviera/marketing-analytics/blob/master/nn_discrete_choice_torch.ipynb]. 
 
